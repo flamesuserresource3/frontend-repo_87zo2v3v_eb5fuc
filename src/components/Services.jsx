@@ -1,27 +1,27 @@
 import React from 'react';
-import { Rocket, Megaphone, BarChart3, Globe } from 'lucide-react';
+import { Megaphone, BarChart3, Target, Video } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
   {
-    icon: Rocket,
-    title: 'Performance Ads',
-    desc: 'ROI-first media buying across Meta, Google, YouTube, and TikTok with continuous creative testing.'
+    icon: Megaphone,
+    title: 'Social Media Strategy & Consulting',
+    desc: 'Custom playbooks, channel selection, and content calendars built for your market and goals.'
   },
   {
-    icon: Megaphone,
-    title: 'Content & Social',
-    desc: 'High-velocity content engines that build authority, awareness, and community across channels.'
+    icon: Video,
+    title: 'Content Creation & Publishing',
+    desc: 'Short-form video, carousels, and copy that convert. Planned, produced, and published for you.'
+  },
+  {
+    icon: Target,
+    title: 'Local Advertising Campaigns',
+    desc: 'Highly targeted Meta/Google ads to reach Serbian customers ready to buy—tracked and optimized.'
   },
   {
     icon: BarChart3,
-    title: 'CRO & Analytics',
-    desc: 'Experiment-led optimization, funnel diagnostics, and dashboards that make decisions obvious.'
-  },
-  {
-    icon: Globe,
-    title: 'SEO & Organic',
-    desc: 'Technical SEO, topical authority, and link strategy to earn compounding, defensible traffic.'
+    title: 'Analytics & Optimization',
+    desc: 'Dashboards, A/B tests, and continuous improvements to keep performance trending up.'
   }
 ];
 
@@ -30,8 +30,8 @@ export default function Services() {
     <section id="services" className="relative w-full bg-white py-20 text-slate-900">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-balance text-3xl font-bold sm:text-4xl">What we do</h2>
-          <p className="mt-3 text-slate-600">Integrated growth marketing built on insights, not guesses.</p>
+          <h2 className="text-balance text-3xl font-bold sm:text-4xl">How We Help You Grow</h2>
+          <p className="mt-3 text-slate-600">Practical, ROI-focused services that turn attention into customers.</p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
@@ -50,11 +50,27 @@ export default function Services() {
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.desc}</p>
               <div className="mt-4 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
               <button className="mt-4 text-sm font-medium text-cyan-700 opacity-0 transition group-hover:opacity-100">
-                Learn more →
+                See details →
               </button>
             </motion.div>
           ))}
         </div>
+
+        {/* Mini process */}
+        <div className="mx-auto mt-16 max-w-3xl">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 className="text-lg font-semibold">How it works</h3>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {["Free Strategy Call", "Custom Campaign Setup", "Ongoing Optimization"].map((step, i) => (
+                <div key={step} className="rounded-lg border border-slate-200 bg-white p-4 text-sm shadow-sm">
+                  <div className="mb-1 text-xs font-semibold text-cyan-700">Step {i + 1}</div>
+                  <div className="font-medium text-slate-900">{step}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
